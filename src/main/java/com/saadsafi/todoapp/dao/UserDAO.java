@@ -26,7 +26,6 @@ public class UserDAO {
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 
         // 2. Create the SQL query
-        // We use '?' as placeholders to prevent SQL injection
         String sql = "INSERT INTO users (username, password_hash) VALUES (?, ?)";
 
         // 3. Use try-with-resources to auto-close the connection

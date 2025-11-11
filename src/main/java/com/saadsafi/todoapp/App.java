@@ -7,7 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle; // <-- NEW IMPORT
+import javafx.stage.StageStyle;
 import java.io.IOException;
 
 public class App extends Application {
@@ -27,7 +27,6 @@ public class App extends Application {
             @Override
             protected Void call() throws Exception {
                 // Simulate loading time (e.g., connecting to DB)
-                // We can also load the login FXML here to speed things up
                 FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/LoginScreen.fxml"));
                 Parent loginRoot = loader.load();
 
