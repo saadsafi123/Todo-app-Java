@@ -1,0 +1,19 @@
+.splash-screen-container {
+    -fx-background-color: #111827; /* Dark background from login sidebar */
+    -fx-background-radius: 12px;   /* Slightly more rounded corners */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 20, 0, 0, 5); /* Subtle shadow */
+    -fx-border-color: #374151; /* Darker border for depth */
+    -fx-border-width: 1px;
+}
+
+.splash-progress-indicator {
+    -fx-progress-color: #2563EB; /* Bright blue for the spinner */
+}
+
+/* Optional: Style the image if needed, though ImageView is good by default */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 0); /* Subtle shadow on image */
+    -fx-background-color: #FFFFFF; /* If image has transparent parts, this acts as a backdrop */
+    -fx-background-radius: 8px; /* Slightly rounded image corners */
+    -fx-padding: 5px; /* Small border effect */
+}

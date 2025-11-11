@@ -1,0 +1,258 @@
+.root {
+    -fx-font-family: "System-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+    -fx-background-color: #FFFFFF;
+    -fx-font-size: 13px;
+}
+
+/* --- Left Pane (Categories) --- */
+#categoryPane {
+    -fx-background-color: #F9FAFB;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+    -fx-border-width: 0 1px 0 0;
+    -fx-border-color: #E5E7EB;
+}
+#categoryPane .label {
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1F2937;
+    -fx-padding: 0 0 0 5px;
+}
+#addCategoryButton {
+    -fx-background-color: transparent;
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #6B7280;
+    -fx-padding: 0 8px;
+    -fx-cursor: hand;
+}
+#addCategoryButton:hover {
+    -fx-background-color: #F3F4F6;
+    -fx-text-fill: #2563EB;
+}
+
+/* --- ListViews (Categories & Tasks) --- */
+.list-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 8px 10px;
+    -fx-font-size: 13px;
+    -fx-text-fill: #374151;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-margin: 1px 0;
+}
+.list-cell:filled:hover {
+    -fx-background-color: #F3F4F6;
+    -fx-cursor: hand;
+}
+.list-cell:filled:selected, .list-cell:filled:selected:focused {
+    -fx-background-color: #E5E7EB; 
+    -fx-text-fill: #1F2937;
+    -fx-font-weight: 600;
+}
+
+/* --- Center Pane (Tasks) --- */
+#taskPane {
+    -fx-padding: 10px 15px;
+    -fx-spacing: 10px;
+}
+#taskPane .label {
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1F2937;
+    -fx-padding: 0 0 0 5px;
+}
+#searchBar {
+    -fx-background-color: #F3F4F6;
+    -fx-border-color: transparent;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
+    -fx-font-size: 13px;
+    -fx-padding: 6px 12px;
+    -fx-prompt-text-fill: #9CA3AF;
+}
+#searchBar:focused {
+    -fx-border-color: #2563EB;
+    -fx-border-width: 2px;
+    -fx-background-color: #FFFFFF;
+}
+#filterButton, #sortButton {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-text-fill: #374151;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6px;
+    -fx-font-size: 13px;
+    -fx-padding: 6px 12px;
+    -fx-cursor: hand;
+}
+#filterButton:hover, #sortButton:hover {
+    -fx-background-color: #F9FAFB;
+}
+
+#addTaskButton {
+    -fx-background-color: #10B981;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-font-size: 13px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-pref-height: 36px;
+}
+#addTaskButton:hover {
+    -fx-background-color: #059669;
+}
+
+/* --- Right Pane (Details) --- */
+#detailsPane {
+    -fx-background-color: #F9FAFB;
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
+    -fx-border-width: 0 0 0 1px;
+    -fx-border-color: #E5E7EB;
+}
+#detailsPane .label {
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #6B7280;
+}
+#detailsPane .text-field, #detailsPane .text-area, #detailsPane .date-picker {
+    -fx-font-size: 13px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 6px 10px;
+}
+#detailsPane .text-area {
+    -fx-pref-height: 100px;
+}
+
+/* * --- THIS IS THE FINAL ComboBox FIX ---
+ * We style the ComboBox itself, and then override all its internal parts.
+ */
+#detailsPane .combo-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 0; /* No padding on the outer box */
+}
+
+/* This is the visible selected item */
+#detailsPane .combo-box .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1F2937;
+    -fx-font-size: 13px;
+    -fx-padding: 6px 10px; /* THIS padding aligns the text */
+}
+
+/* This is the arrow button on the right */
+#detailsPane .combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 10px 0 0; /* Padding for the arrow */
+}
+
+/* This is the arrow shape itself */
+#detailsPane .combo-box .arrow {
+    -fx-background-color: #6B7280; /* Arrow color */
+    -fx-padding: 3px;
+    -fx-shape: "M 0 0 L 4 4 L 8 0 Z"; /* Down arrow shape */
+}
+
+/* --- End of ComboBox Fix --- */
+
+
+/* Style the ComboBox *popup* menu (this was already correct) */
+.combo-box-popup .list-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1px;
+    -fx-background-radius: 6px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 3);
+}
+.combo-box-popup .list-cell {
+    -fx-font-size: 13px;
+    -fx-padding: 8px 12px;
+    -fx-background-color: #FFFFFF;
+}
+.combo-box-popup .list-cell:hover {
+     -fx-background-color: #F3F4F6;
+}
+.combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: #E5E7EB;
+    -fx-text-fill: #1F2937;
+}
+
+
+/* --- Task/Subtask Cells --- */
+.task-cell-hbox, .subtask-cell-hbox {
+    -fx-alignment: CENTER_LEFT;
+}
+.check-box {
+    -fx-padding: 0 5px 0 0;
+}
+.check-box .box {
+    -fx-padding: 2px;
+}
+
+.subtask-label {
+    -fx-padding: 4px 2px;
+    -fx-font-size: 13px;
+    -fx-cursor: text;
+    -fx-background-color: transparent;
+}
+.subtask-field {
+    -fx-font-size: 13px;
+    -fx-padding: 2px 0px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #2563EB;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+}
+.subtask-field:focused {
+    -fx-border-width: 2px;
+}
+
+
+/* --- Detail Pane Buttons --- */
+#saveTaskButton {
+    -fx-background-color: #10B981;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+    -fx-background-radius: 6px;
+    -fx-font-size: 13px;
+    -fx-padding: 8px 15px;
+}
+#saveTaskButton:hover {
+    -fx-background-color: #059669;
+}
+#deleteTaskButton {
+    -fx-background-color: #EF4444;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+    -fx-background-radius: 6px;
+    -fx-font-size: 13px;
+    -fx-padding: 8px 15px;
+}
+#deleteTaskButton:hover {
+    -fx-background-color: #DC2626;
+}
+#logoutButton {
+    -fx-background-color: #F3F4F6;
+    -fx-text-fill: #374151;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-padding: 8px 15px;
+}
+#logoutButton:hover {
+    -fx-background-color: #E5E7EB;
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saadsafi.todoapp.controller.MainAppController">
+   
+    <left>
+      <VBox prefHeight="200.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #f8f9fa; -fx-border-color: #e0e0e0; -fx-border-width: 0 1 0 0;">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Categories" textFill="#333333">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addCategoryButton" mnemonicParsing="false" text="+" />
+               </children>
+            </HBox>
+            <ListView fx:id="categoryListView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <Button fx:id="logoutButton" mnemonicParsing="false" prefWidth="200.0" text="Logout" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   
+    <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Tasks" textFill="#333333">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="searchBar" promptText="Search tasks..." HBox.hgrow="ALWAYS" />
+                  <Button fx:id="filterButton" mnemonicParsing="false" text="Filter" />
+                  <Button fx:id="sortButton" mnemonicParsing="false" text="Sort" />
+               </children>
+            </HBox>
+            <ListView fx:id="taskListView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <Button fx:id="addTaskButton" mnemonicParsing="false" prefWidth="500.0" text="Add New Task">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+   
+    <right>
+      <VBox fx:id="taskDetailsPane" prefHeight="200.0" prefWidth="300.0" spacing="10.0" style="-fx-background-color: #f8f9fa; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 0 1;">
+         <children>
+            <Label text="Task Details" textFill="#333333">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="taskTitleField" promptText="Task Title" />
+            <TextArea fx:id="taskDescriptionArea" prefHeight="100.0" promptText="Description..." />
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Due Date:" />
+                  <DatePicker fx:id="taskDueDate" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Priority:" />
+                  <ComboBox fx:id="taskPriorityComboBox" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Category:" />
+                  <ComboBox fx:id="taskCategoryComboBox" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <Label text="Subtasks" textFill="#333333">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+            <ListView fx:id="subtaskListView" prefHeight="100.0" prefWidth="200.0" />
+            
+            <HBox spacing="5.0">
+               <children>
+                  <TextField fx:id="newSubtaskField" HBox.hgrow="ALWAYS" promptText="Add a new subtask..." />
+                  <Button fx:id="addSubtaskButton" mnemonicParsing="false" text="Add" />
+               </children>
+            </HBox>
+            
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+               <children>
+                  <Button fx:id="deleteTaskButton" mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white;" text="Delete" />
+                  <Button fx:id="saveTaskButton" mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Save Changes" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </right>
+</BorderPane>
